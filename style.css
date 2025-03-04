@@ -1,0 +1,788 @@
+/* Control how the body of the website behaves and looks */
+body, html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  min-height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box;
+}
+
+/* Background video settings */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire viewport */
+  z-index: -2; /* Places the video behind the content */
+  overflow-y: auto;
+}
+
+/* Put a dark cover on top of the background video to make the content more readable. */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95); /* Semi-transparent black overlay */
+  z-index: -1; /* Ensures the overlay is behind the content but above the video */
+}
+
+
+/*  Top navigation bar settings */
+.navbar {
+  background-color:  transparent;
+  width: 100%;
+  height: clamp(5vh, 14.5vh, 16vh);
+  padding: 2.5vw 2.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  font-weight: bolder;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  padding: 1vw 1vw;
+  position: relative;
+  z-index: 100;
+}
+.navbar ul li a {
+  font-size: clamp(0.5rem, 1vw + 0.5rem, 1rem);
+  color: rgb(32, 28, 28);
+  text-decoration: none;
+  transition: all 1s;
+  background-color: aquamarine;
+  padding: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 0.7vw;
+}
+.navbar ul li a:hover {
+  background-color: transparent;
+  color: rgb(120, 235, 135);
+}
+/* customize the logo */
+.logo img {
+  width: 8vw;
+  height: 6vw;
+  object-fit: cover;
+}
+
+/* Style the drop down list */
+.dropdown{
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.dropdown ul {
+  flex-direction: column;
+}
+
+.dropdown ul li {
+  width: clamp(80px, 20vw, 150px);
+}
+
+.dropdown ul li a {
+  background-color: transparent;
+}
+
+.navbar ul li:hover .dropdown, .navbar ul li:focus-within .dropdown {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1000;
+  background-color: aquamarine;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  border-radius: 0.7vw;
+}
+
+.navbar ul li:hover .dropdown ul {
+  display: block;
+  margin: 5px;
+}
+
+.navbar ul li:hover .dropdown ul li {
+  width: clamp(80px, 20vw, 150px);
+  padding: 2vh;
+}
+
+.fas {
+  float: right;
+  margin-left: 10px;
+  padding-top: 3px;
+  z-index: 2000;
+}
+
+/* Style the subdropdown list */
+.subDropdown {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: aquamarine;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.subDropdown ul li a {
+  background-color: transparent;
+}
+
+.dropdown ul li:hover .subDropdown, .dropdown ul li:focus-within .subDropdown {
+  display: block;
+  position: absolute;
+  left: clamp(85px, 20vw, 155px);
+  top: 0%;
+  z-index: 1000;
+  background-color: aquamarine;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  border-radius: 0.7vw;
+}
+
+.dropdown ul li:hover .subDropdown ul {
+  display: block;
+  margin: 5px;
+  background-color: transparent;
+}
+
+.dropdown ul li:hover .subDropdown ul li {
+  width: clamp(6rem, 10rem, 12rem);
+  padding: 2vh;
+}
+
+/* Settings for the header section inside the untitled container */
+.header {
+  position: absolute;
+  z-index: 10;
+  text-align: right;
+  margin-bottom: 20px;
+  background-color: transparent;
+  top:30vh;
+  left: 30vw;
+  transform: translate(-50%, -50%);
+}
+
+.header h1 {
+  font-size: clamp(2rem, 6vw, 2.5rem);
+  color: lightgreen;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds text contrast over video */
+  margin-bottom: 0.5rem;
+  text-align: right;
+  padding: 2.5vw 2.5vw;
+}
+
+.untitled {
+  position: absolute;
+  top: 14vh;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 105%;
+  width: 100%;
+  animation: rotateHue infinite 30s linear;
+  animation-delay: 2.5s/6; 
+  overflow: hidden;
+  background: #111;
+  z-index: 0;
+  align-self: center;
+  object-fit: fill;
+  justify-content: center;
+  display: flex;
+}
+/*@keyframes rotateHue {
+  0% { filter: hue-rotate(0deg); }
+  20% { filter: hue-rotate(0deg); }
+  25% { filter: hue-rotate(90deg); }
+  45% { filter: hue-rotate(90deg); }
+  50% { filter: hue-rotate(180deg); }
+  70% { filter: hue-rotate(180deg); }
+  75% { filter: hue-rotate(270deg); }
+  95% { filter: hue-rotate(270deg); }
+  100% { filter: hue-rotate(360deg); } 
+}*/
+  .untitled__shutters {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 2;
+    animation: rotateFrame 8s linear infinite; 
+  
+  }
+@keyframes rotateFrame {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(180deg); } 
+}
+    
+    .untitled__shutters:before, .untitled__shutters:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      background-color: skyblue;
+      pointer-events: auto; 
+    
+    }
+    .untitled__shutters:before {
+      bottom: 50%;
+      animation: openTop 5s infinite; 
+    }
+@keyframes openTop {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+    animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1); 
+  }
+  40% {
+    transform: translate3d(-50%, -65vmax, 0);
+    animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335); 
+  }
+  70% {
+    transform: translate3d(-50%, -65vmax, 0);
+    animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335); 
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335); 
+  } 
+}
+    .untitled__shutters:after {
+      top: 50%;
+      animation: openBottom 5s infinite; 
+    }
+@keyframes openBottom {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+    animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1); 
+  }
+  40% {
+    transform: translate3d(-50%, 65vmax, 0);
+    animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335); 
+  }
+  70% {
+    transform: translate3d(-50%, 65vmax, 0);
+    animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335); 
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335); 
+  } 
+}
+  .untitled__slides {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent; 
+  }
+  .untitled__slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    animation: showHideSlide infinite 30s;
+    animation-fill-mode: forwards; 
+  }
+
+  .untitled__slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+@keyframes showHideSlide {
+  0% {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1; 
+  }
+  25% {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1; 
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1; 
+  } 
+}
+    .untitled__slide:nth-child(1) {
+      animation-delay: 0s; 
+    }
+    .untitled__slide:nth-child(2) {
+      animation-delay: 5s; 
+    }
+    .untitled__slide:nth-child(3) {
+      animation-delay: 10s; 
+    }
+    .untitled__slide:nth-child(4) {
+      animation-delay: 15s; 
+    }
+    .untitled__slide:nth-child(5) {
+        animation-delay: 20s; 
+      }
+    .untitled__slide:nth-child(6) {
+          animation-delay: 25s; 
+        }
+
+  .untitled__slideBg {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: skyblue;
+    background-blend-mode: normal;
+    opacity: 1;
+    z-index: -1;
+    animation: bgInOut 5s infinite; 
+  }
+@keyframes bgInOut {
+  0% {
+    transform: rotate(-45deg) scale(1.1);
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); 
+  }
+  33% {
+    transform: rotate(0deg); 
+  }
+  50% {
+    transform: rotate(0deg); 
+  }
+  66% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); 
+  }
+  100% {
+    transform: rotate(45deg) scale(0.9); 
+  } 
+}
+  .untitled__slideContent {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    color: white;
+    font-family: "Abril Fatface", sans-serif;
+    line-height: 0.8;
+    letter-spacing: -0.025em;
+    z-index: 2;
+    opacity: 1;
+    text-shadow: 0 0 0.5em rgba(179, 64, 26, 0.25);
+    mix-blend-mode: lighten;
+  }
+    .untitled__slideContent span {
+      display: block;
+      font-size: 15vmin; 
+    }
+
+  .otherTitles {
+      position: absolute;
+      font-family: Arial, sans-serif;
+      font-size: clamp(1rem, 5vw, 2rem);
+      text-align: center;
+      z-index: 1;
+      color: #ffff;
+      display: block;
+      width: 90vw;
+      top: 120vh;
+      left: 5%;
+      padding: 1%;
+    }
+
+  /* Control how the long paragraphs in the website will behave */
+.p {
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+  color: #ffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1); /* Adds text contrast over video */
+  margin-top: 0;
+  line-height: 1.6;
+  z-index: 0;
+  position: absolute;
+  top: 135vh;
+  left: 5%;
+  display: block;
+  width: 90vw;
+  text-align: center;
+  background-color: transparent;
+}
+/* Style the titles in the website*/
+.title {
+  text-align: left;
+  font-size: xx-large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the announcement section in the home page */
+.announcementsSection {
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  padding: 20px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+  color: #ffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  top: clamp(197vh, 155vh + 10vw, 156vh);
+  display: block;
+  z-index: 0;
+
+}
+
+.announcement {
+  display: flex;
+  align-items: center;
+  margin-bottom: clamp(0.8rem, 1.5rem, 2rem);
+}
+
+.announcement img {
+  width: 5vw;
+  height: 5vw;
+  object-fit: cover;
+  margin-right: 2vw;
+  border-radius: 0.2vw;
+  border: 0.2vw solid lightgreen;
+}
+
+.announcement p {
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Manage how the content of the website looks */
+.content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  padding: 2rem;
+  z-index: 1; /* Ensures content is above the video */
+}
+
+.otherTitle h2 {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  font-size: clamp(1rem, 6vw, 2rem);
+  text-align: center;
+  z-index: 1;
+  color: #ffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  display: block;
+  width: 90vw;
+  left: 5%;
+  padding: 1%;
+  top: clamp(190vh, 140vh + 20vw, 155vh);
+  background-color: transparent;
+}
+
+/*provide an overlay for the slideshow */
+.slideshowOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 8; /* Ensures the overlay is behind the content but above the video */
+}
+
+
+
+
+  /* styling for the footer of the website */
+  .bottomBar {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    padding: 20vw 0;
+    font-size:larger;
+    top: clamp(290vh, 160vh + 10vw, 220vh);
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    border-top-left-radius: 1.5vw;
+    border-top-right-radius: 1.5vw;
+  }
+
+  .linksContainer {
+    display: flex;
+    gap: 5vw;
+    position: absolute;
+    left: 1%;
+    top: 15%;
+  }
+
+  .links {
+    font-size: 90%;
+    font-weight: bold;
+    color: #ffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  }
+
+  .links a {
+    display: block;
+    left: 8.5%;
+    top: 18%;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    color: #00CFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    padding: 10%;
+    text-decoration: none;
+    margin: 0px 0;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .links a:hover {
+    background-color: transparent;
+    color: lightgreen;
+  }
+
+  .links h3{
+    padding-bottom: 2%;
+    font-size: large;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .underLogoContent {
+    width: 8%;
+    text-align: left;
+    color: #ffff;
+    font-style: italic;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+  }
+
+  .usefulLinks {
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    font-weight: bold;
+    color: #ffff;
+    text-align: left;
+  }
+
+  .usefulLinks h3 {
+    padding-bottom: 2%;
+    font-size: large;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .usefulLinks a {
+    display: block;
+    top: 18%;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    color: #00CFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    padding: 3%;
+    text-decoration: none;
+    margin: 0px 0;
+    text-align: left;
+    font-style: italic;
+  }
+
+  .usefulLinks a:hover {
+    background-color: transparent;
+    color: lightgreen;
+  }
+
+  .locationInfo {
+    font-size: 90%;
+    font-weight: bold;
+    color: #ffff;
+    text-align: left;
+  }
+
+  .locationInfo h3 {
+    padding-bottom: 2%;
+    font-size: large;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .locationInfo p {
+    display: block;
+    top: 18%;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    color: #00CFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    padding: 3%;
+    text-decoration: none;
+    margin: 0px 0;
+    text-align: left;
+    font-style: italic;
+  }
+
+  /* From Uiverse.io by Zameerahmad01 */ 
+ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  row-gap: 1.8rem;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: 20px;
+  left: 20%;
+  transform: translateX(50%);
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 10px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: 5px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+/* style the icons */
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .linksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items */
+    text-align: center;
+    gap: 2vw;
+    position: static; /* Remove absolute positioning for better stacking */
+  }
+
+  .links a {
+    font-size: 80%; /* Slightly larger font for better readability */
+    padding: 5%; /* Adjust padding */
+  }
+}
+
+.passportImage {
+  position: absolute;
+  top: 25vh;
+}
+
+.passportImage img {
+  object-fit: cover;
+  height: 55vh;
+  width: 26vw;
+  border-radius: 15%;
+  padding: 2vw;
+  border: 2vw aquamarine;
+}
+
+
+
+
