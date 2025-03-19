@@ -1,12 +1,22 @@
 /* Control how the body of the website behaves and looks */
+* {
+  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body, html {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   overflow: auto;
   min-height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  min-height: 100vh;
 }
 
 /* Background video settings */
@@ -34,15 +44,16 @@ body, html {
 
 
 /*  Top navigation bar settings */
+
 .navbar {
-  background-color:  transparent;
+  background-color: transparent;
   width: 100%;
   height: clamp(5vh, 14.5vh, 16vh);
   padding: 2.5vw 2.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: relative;
   font-weight: bolder;
 }
 
@@ -73,9 +84,9 @@ body, html {
 }
 /* customize the logo */
 .logo img {
-  width: 8vw;
-  height: 6vw;
-  object-fit: cover;
+  width: 5vw;
+  height: 5vw;
+  object-fit: contain;
 }
 
 /* Style the drop down list */
@@ -194,11 +205,11 @@ body, html {
 }
 
 .untitled {
-  position: absolute;
-  top: 14vh;
+  position: relative;
   left: 50%;
+  margin-top: -20px;
   transform: translateX(-50%);
-  height: 105%;
+  height: 105vh;
   width: 100%;
   animation: rotateHue infinite 30s linear;
   animation-delay: 2.5s/6; 
@@ -404,8 +415,13 @@ body, html {
       font-size: 15vmin; 
     }
 
+  .introductionContainer {
+    position: relative;
+    grid-template-rows: auto auto;
+  }
+
   .otherTitles {
-      position: absolute;
+      position: relative;
       font-family: Arial, sans-serif;
       font-size: clamp(1rem, 5vw, 2rem);
       text-align: center;
@@ -413,7 +429,6 @@ body, html {
       color: #ffff;
       display: block;
       width: 90vw;
-      top: 120vh;
       left: 5%;
       padding: 1%;
     }
@@ -426,8 +441,7 @@ body, html {
   margin-top: 0;
   line-height: 1.6;
   z-index: 0;
-  position: absolute;
-  top: 135vh;
+  position: relative;
   left: 5%;
   display: block;
   width: 90vw;
@@ -442,15 +456,19 @@ body, html {
 }
 
 /* Style the announcement section in the home page */
+.announcementContainer {
+  position: relative;
+  grid-template-rows: auto auto;
+}
+
 .announcementsSection {
-  position: absolute;
+  position: relative;
   width: 100%;
   background-color: transparent;
   padding: 20px;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
   color: #ffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-  top: clamp(197vh, 155vh + 10vw, 156vh);
   display: block;
   z-index: 0;
 
@@ -498,7 +516,7 @@ body, html {
 }
 
 .otherTitle h2 {
-  position: absolute;
+  position: relative;
   font-family: Arial, sans-serif;
   font-size: clamp(1rem, 6vw, 2rem);
   text-align: center;
@@ -509,7 +527,6 @@ body, html {
   width: 90vw;
   left: 5%;
   padding: 1%;
-  top: clamp(190vh, 140vh + 20vw, 155vh);
   background-color: transparent;
 }
 
@@ -524,135 +541,112 @@ body, html {
   z-index: 8; /* Ensures the overlay is behind the content but above the video */
 }
 
+.aboutUsContainer {
+  position: relative;
+}
 
+.chairmansRemarks {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
+.chairmansRemarks h1 {
+  color: skyblue;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.chairmansRemarks p {
+  font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+  color: #ffff;
+  text-align: center;
+}
 
   /* styling for the footer of the website */
-  .bottomBar {
-    position: absolute;
-    display: block;
-    overflow: hidden;
-    padding: 20vw 0;
-    font-size:larger;
-    top: clamp(290vh, 160vh + 10vw, 220vh);
-    width: 100%;
-    height: auto;
-    background: rgba(0, 0, 0, 0.5);
-    color: #ffff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-    border-top-left-radius: 1.5vw;
-    border-top-right-radius: 1.5vw;
-  }
+  /* Bottom Bar Container */
+.bottomBarContainer {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  border-top-left-radius: 1.5vw;
+  border-top-right-radius: 1.5vw;
+  padding: 2rem 0;
+}
 
-  .linksContainer {
-    display: flex;
-    gap: 5vw;
-    position: absolute;
-    left: 1%;
-    top: 15%;
-  }
+.bottomBar {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
-  .links {
-    font-size: 90%;
-    font-weight: bold;
-    color: #ffff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-  }
+.linksContainer {
+  display: flex;
+  gap: 5vw;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 
-  .links a {
-    display: block;
-    left: 8.5%;
-    top: 18%;
-    font-size: clamp(0.8rem, 1vw, 1.2rem);
-    color: #00CFFF;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-    padding: 10%;
-    text-decoration: none;
-    margin: 0px 0;
-    text-align: center;
-    font-style: italic;
-  }
-  
-  .links a:hover {
-    background-color: transparent;
-    color: lightgreen;
-  }
+.links,
+.usefulLinks,
+.locationInfo {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 1rem;
+}
 
-  .links h3{
-    padding-bottom: 2%;
-    font-size: large;
-    text-align: center;
-    text-decoration: underline;
-  }
+.links a,
+.usefulLinks a,
+.locationInfo p {
+  display: block;
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  color: #00CFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  padding: 0.5rem 0;
+  text-decoration: none;
+  font-style: italic;
+  text-align: center;
+}
 
-  .underLogoContent {
-    width: 8%;
-    text-align: left;
-    color: #ffff;
-    font-style: italic;
-    font-size: clamp(0.8rem, 1vw, 1.2rem);
-  }
+.links a:hover,
+.usefulLinks a:hover {
+  background-color: transparent;
+  color: lightgreen;
+}
 
-  .usefulLinks {
-    font-size: clamp(0.8rem, 1vw, 1.2rem);
-    font-weight: bold;
-    color: #ffff;
-    text-align: left;
-  }
+.links h3,
+.usefulLinks h3,
+.locationInfo h3 {
+  padding-bottom: 1rem;
+  font-size: large;
+  text-align: center;
+  text-decoration: underline;
+}
 
-  .usefulLinks h3 {
-    padding-bottom: 2%;
-    font-size: large;
-    text-align: center;
-    text-decoration: underline;
-  }
+.underLogoContent {
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  margin-bottom: 1rem;
+}
 
-  .usefulLinks a {
-    display: block;
-    top: 18%;
-    font-size: clamp(0.8rem, 1vw, 1.2rem);
-    color: #00CFFF;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    padding: 3%;
-    text-decoration: none;
-    margin: 0px 0;
-    text-align: left;
-    font-style: italic;
-  }
-
-  .usefulLinks a:hover {
-    background-color: transparent;
-    color: lightgreen;
-  }
-
-  .locationInfo {
-    font-size: 90%;
-    font-weight: bold;
-    color: #ffff;
-    text-align: left;
-  }
-
-  .locationInfo h3 {
-    padding-bottom: 2%;
-    font-size: large;
-    text-align: center;
-    text-decoration: underline;
-  }
-
-  .locationInfo p {
-    display: block;
-    top: 18%;
-    font-size: clamp(0.8rem, 1vw, 1.2rem);
-    color: #00CFFF;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    padding: 3%;
-    text-decoration: none;
-    margin: 0px 0;
-    text-align: left;
-    font-style: italic;
-  }
-
-  /* From Uiverse.io by Zameerahmad01 */ 
+/* Social Icons */
 ul {
   list-style: none;
 }
@@ -753,30 +747,37 @@ ul {
   background-color: #ff0000;
 }
 
-@media (max-width: 768px) { /* Adjust breakpoint as needed */
+/* Responsive Design */
+@media (max-width: 768px) {
   .linksContainer {
-    display: flex;
     flex-direction: column;
-    align-items: center; /* Center the items */
+    align-items: center;
     text-align: center;
-    gap: 2vw;
-    position: static; /* Remove absolute positioning for better stacking */
+    gap: 1rem;
   }
 
-  .links a {
-    font-size: 80%; /* Slightly larger font for better readability */
-    padding: 5%; /* Adjust padding */
+  .links,
+  .usefulLinks,
+  .locationInfo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .links a,
+  .usefulLinks a,
+  .locationInfo p {
+    padding: 0.5rem 0;
   }
 }
 
 .passportImage {
-  position: absolute;
-  top: 25vh;
+  position: relative;
+  padding-top: 50px;
 }
 
 .passportImage img {
   object-fit: cover;
-  height: 55vh;
+  height: 26vw;
   width: 26vw;
   border-radius: 15%;
   padding: 2vw;
