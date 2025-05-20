@@ -1,8 +1,8 @@
-/* Control how the body of the website behaves and looks */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
 * {
   margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body, html {
@@ -14,9 +14,11 @@ body, html {
   overflow-x: hidden;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
   min-height: 100vh;
+  gap: 20px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 /* Background video settings */
@@ -38,200 +40,377 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.95); /* Semi-transparent black overlay */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
   z-index: -1; /* Ensures the overlay is behind the content but above the video */
 }
 
 
 /*  Top navigation bar settings */
-
-.navbar {
-  background-color: transparent;
+header {
   width: 100%;
   height: clamp(5vh, 14.5vh, 16vh);
-  padding: 2.5vw 2.5vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0.5rem;
+  z-index: 1000;
   position: relative;
-  font-weight: bolder;
-}
-
-.navbar ul {
-  list-style: none;
   display: flex;
 }
 
-.navbar ul li {
-  padding: 1vw 1vw;
-  position: relative;
-  z-index: 100;
-}
-.navbar ul li a {
-  font-size: clamp(0.5rem, 1vw + 0.5rem, 1rem);
-  color: rgb(32, 28, 28);
-  text-decoration: none;
-  transition: all 1s;
-  background-color: aquamarine;
-  padding: 0.5vw;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  border-radius: 0.7vw;
-}
-.navbar ul li a:hover {
-  background-color: transparent;
-  color: rgb(120, 235, 135);
-}
-/* customize the logo */
-.logo img {
-  width: 5vw;
-  height: 5vw;
-  object-fit: contain;
-}
+  .headerContainer {
+    width: 100%;
+    align-items: center;
+    font-weight: bolder;
+  }
 
-/* Style the drop down list */
-.dropdown{
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  transform: translateY(-10px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+  }
 
-.dropdown ul {
-  flex-direction: column;
-}
+    /* customize the logo */
+  .logo img {
+    width: 6vw;
+    height: 6vw;
+    object-fit: contain;
+  }
 
-.dropdown ul li {
-  width: clamp(80px, 20vw, 150px);
-}
+  .mainNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.dropdown ul li a {
-  background-color: transparent;
-}
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+  }
 
-.navbar ul li:hover .dropdown, .navbar ul li:focus-within .dropdown {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  z-index: 1000;
-  background-color: aquamarine;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  border-radius: 0.7vw;
-}
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: green;
+    margin: 5px 0;
+    transition: all 0.7s ease;
+  }
 
-.navbar ul li:hover .dropdown ul {
-  display: block;
-  margin: 5px;
-}
+  .navMenu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    gap: clamp(1rem, 2vw, 2rem);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
-.navbar ul li:hover .dropdown ul li {
-  width: clamp(80px, 20vw, 150px);
-  padding: 2vh;
-}
+  .navMenu li {
+    position: relative;
+  }
 
-.fas {
-  float: right;
-  margin-left: 10px;
-  padding-top: 3px;
-  z-index: 2000;
-}
+  .navMenu li a {
+    display: block;
+    padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 1rem);
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+  }
 
-/* Style the subdropdown list */
-.subDropdown {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  background-color: aquamarine;
-  transform: translateY(-10px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out, transform 1s ease-in-out;
-}
+  .navMenu li {
+    background: linear-gradient(to right, #28A745, #007BFF);
+    border-radius: 15px;
+  }
 
-.subDropdown ul li a {
-  background-color: transparent;
-}
+  .navMenu li:hover {
+    background: transparent;
+    transition: all 1.4s ease-in;
+  }
 
-.dropdown ul li:hover .subDropdown, .dropdown ul li:focus-within .subDropdown {
-  display: block;
-  position: absolute;
-  left: clamp(85px, 20vw, 155px);
-  top: 0%;
-  z-index: 1000;
-  background-color: aquamarine;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  border-radius: 0.7vw;
-}
+  .navMenu li a:hover {
+    color: darkblue;
+    transition: color 0.7s ease-in;
+  }
 
-.dropdown ul li:hover .subDropdown ul {
-  display: block;
-  margin: 5px;
-  background-color: transparent;
-}
+  /* Style the drop down list */
+  .dropdown{
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(to right, #28A745, #007BFF);
+    border-radius: 0.7vw;
+    padding: 0;
+    width: clamp(150px, 20vw, 200px);
+    z-index: 1200;
+    transform: translateY(-15px);
+    opacity: 0;
+    visibility: hidden;
+    overflow: visible;
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 1.5);
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
 
-.dropdown ul li:hover .subDropdown ul li {
-  width: clamp(6rem, 10rem, 12rem);
-  padding: 2vh;
-}
+  .dropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+
+  .dropdown.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mainNav .navMenu .dropdownContainer:hover .dropdown, 
+  .mainNav .navMenu .dropdownContainer:focus-within .dropdown, 
+  .dropdown:hover  {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown ul .subDropdownContainer:hover .subDropdown,
+  .dropdown ul .subDropdownContainer:focus-within .subDropdown,
+  .subDropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .dropdown ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .dropdown ul li a {
+    padding: 1rem;
+    display: block;
+  }
+
+  .dropdown ul li a:hover {
+    color: black;
+  }
+
+  .fas {
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+    z-index: 2000;
+  }
+
+  .subDropdownContainer {
+    position: relative;
+  }
+
+  .subDropdown {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 14vw;
+    background: linear-gradient(to right, #28A745, #007BFF);
+    border-radius: 0.7vw;
+    padding: 0;
+    width: clamp(150px, 20vw, 200px);
+    z-index: 1201;
+    transform: translateX(-20px);
+    opacity: 0;
+    visibility: hidden;
+    overflow: visible;
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 1.5);
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
+
+  .subDropdownContainer:hover .subDropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .subDropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+
+  .subDropdown.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .subDropdown ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .subDropdown ul li a {
+    padding: 1rem;
+    display: block;
+  }
+
+  .subDropdown ul li a:hover {
+    color: black;
+  }
+
+  @media (max-width: 768px) {
+    .logo img {
+      width: 16vw;
+      height: 16vw;
+      object-fit: contain;
+    }
+    .navMenu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: linear-gradient(to right, #28A745, #007BFF);
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 2rem;
+      transition: right 1.2s ease-in-out;
+      z-index: 1000;
+      box-shadow: 0 15px 24px rgba(0, 0, 0, 1.5);
+    }
+
+    body.menuOpen {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .navMenu.active {
+      right: 0;
+    }
+    
+    .hamburger {
+      display: block;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .dropdownContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    
+    .subDropdownContainer {
+      width: 100%;
+    }
+
+    .dropdown {
+      position: static;
+      width: 100%;
+      text-align: center;
+      display: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .subDropdown {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      display: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .dropdownContainer:hover .dropdown,
+    .subDropdownContainer:hover .subDropdown {
+      display: none;
+    }
+    
+    .dropdownContainer.active .dropdown,
+    .subDropdownContainer.active .subDropdown {
+      display: block;
+    }
+    
+  }
+
 
 /* Settings for the header section inside the untitled container */
 .header {
   position: absolute;
-  z-index: 10;
-  text-align: right;
-  margin-bottom: 20px;
+  z-index: 50;
+  top: 20vh;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 10px;
   background-color: transparent;
-  top:30vh;
-  left: 30vw;
-  transform: translate(-50%, -50%);
+  width: 100vw;
 }
 
 .header h1 {
-  font-size: clamp(2rem, 6vw, 2.5rem);
+  font-size: clamp(2.1rem, 8vw, 3rem);
   color: lightgreen;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds text contrast over video */
-  margin-bottom: 0.5rem;
-  text-align: right;
-  padding: 2.5vw 2.5vw;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  display: flex;
+}
+
+.header p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #ffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
 }
 
 .untitled {
   position: relative;
   left: 50%;
-  margin-top: -20px;
   transform: translateX(-50%);
-  height: 105vh;
+  height: 120vh;
   width: 100%;
   animation: rotateHue infinite 30s linear;
   animation-delay: 2.5s/6; 
   overflow: hidden;
-  background: #111;
+  background: black;
   z-index: 0;
   align-self: center;
   object-fit: fill;
   justify-content: center;
   display: flex;
+  border-top: 10px solid transparent;
+  border-color: transparent;
 }
-/*@keyframes rotateHue {
-  0% { filter: hue-rotate(0deg); }
-  20% { filter: hue-rotate(0deg); }
-  25% { filter: hue-rotate(90deg); }
-  45% { filter: hue-rotate(90deg); }
-  50% { filter: hue-rotate(180deg); }
-  70% { filter: hue-rotate(180deg); }
-  75% { filter: hue-rotate(270deg); }
-  95% { filter: hue-rotate(270deg); }
-  100% { filter: hue-rotate(360deg); } 
-}*/
+
   .untitled__shutters {
     position: absolute;
     height: 100%;
@@ -431,6 +610,7 @@ body, html {
       width: 90vw;
       left: 5%;
       padding: 1%;
+      text-decoration: overline;
     }
 
   /* Control how the long paragraphs in the website will behave */
@@ -442,7 +622,6 @@ body, html {
   line-height: 1.6;
   z-index: 0;
   position: relative;
-  left: 5%;
   display: block;
   width: 90vw;
   text-align: center;
@@ -562,6 +741,7 @@ body, html {
   margin-bottom: 1rem;
   text-align: center;
   padding-top: 30px;
+  text-decoration: overline;
 }
 
 .chairmansRemarks p {
@@ -577,11 +757,9 @@ body, html {
   /* Bottom Bar Container */
 .bottomBarContainer {
   position: relative;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right,  black, rgb(105, 103, 103));
   color: #ffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-  border-top-left-radius: 1.5vw;
-  border-top-right-radius: 1.5vw;
   padding: 2rem 0;
 }
 
@@ -784,6 +962,82 @@ ul {
   border: 2vw aquamarine;
 }
 
+.application {
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
 
+.application h1 {
+  text-align: center;
+  color: skyblue;
+  padding: 10px;
+  font-size: clamp(1rem, 5vw, 2rem);
+  text-decoration: overline;
+}
 
+.application p {
+  color: #ffff;
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+  text-align: center;
+}
 
+.applicationTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin: 20px 0;
+  font-size: clamp(0.7rem, 3vw, 1.2rem);
+  font-style: oblique;
+}
+
+.applicationTable th, .applicationTable td {
+  padding: 12px;
+  text-align: left;
+  border-radius: 50vw;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.applicationTable tbody tr {
+  transition: all 1s ease;
+  position: relative;
+}
+
+.applicationTable th {
+  background-color: rgb(101, 233, 101); 
+  color: white;
+  text-align: center;
+}
+
+.applicationTable td {
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+}
+
+.applicationTable tr:hover td {
+  background-color: #f1f1f1;
+  color: #000;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 1.5);
+  padding: 10px;
+}
+
+.applicationTable tbody tr:hover {
+  transform: translateY(-7px);
+}
+
+.gradientDivider {
+  height: 10px;
+  background: linear-gradient(to right, #28A745, #007BFF);
+  width: 90vw;
+  border-radius: 5px;
+  align-self: center;
+  align-items: center;
+}
+
+.logoAside {
+  display: grid;
+  grid-row: auto auto;
+}

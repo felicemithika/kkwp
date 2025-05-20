@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Water Background</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -21,75 +22,368 @@
 
   <!-- Content Over Video -->
    <!--The navigation bar-->
-   <div class="navbar">
-
-    <!--Logo image-->
-    <div class="logo" style="align-items: left;">
-      <img src="images/myLogo.webp" alt="KKWP Logo"/>
-    </div>
-
-    <!--Navigation bar links-->
-    <ul>
-      <li><a href="index.html">Home</a></li>
-
-      <!--Local Water System dropdrop list-->
-      <li>
-        <a href="#">LWS <i class="fas fa-caret-down"></i> </a>
-        <div class="dropdown">
-
-          <ul>
-            <li>
-              <!--Local water systems in Buuri-->
-              <a href="#">Buuri <i class="fas fa-caret-right"></i> </a>
-              <div class="subDropdown">
-                <ul>
-                  <li><a href="kiirua.html">Kiirua</a></li>
-                  <li><a href="marinyaARwibi.html">Marinya A-Rwibi</a></li>
-                  <li><a href="kinyenjere.html">Kinyenjere</a></li>
-                  <li><a href="ndunyuBarikui.html">Ndunyu Barikui</a></li>
-                  <li><a href="naucii.html">Naucii</a></li>
-                  <li><a href="nkandoCKinoria.html">Nkando c/Kinoria</a></li>
-                  <li><a href="kithima1Kamuketha.html">KithimaI/Kamuketha</a></li>
-                  <li><a href="kithima2Nruma.html">KithimaII/N.ruma</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <!--Local water systems in Kibirichia-->
-              <a href="#">Kibirichia <i class="fas fa-caret-right"></i> </a>
-              <div class="subDropdown">
-                <ul>
-                  <li><a href="karanene.html">Karanene</a></li>
-                  <li><a href="machakaMurinya.html">Machaka/Murinya</a></li>
-                  <li><a href="mboroga.html">Mboroga</a></li>
-                  <li><a href="kiborione.html">Kiborione</a></li>
-                  <li><a href="kamuketha.html">Kamuketha/Ntumburi</a></li>
-                  <li><a href="majareneMTKamarete.html">Majarene/Marurui/Thiira/Kamarete</a></li>
-                  <li><a href="kongoAcekeKinoria.html">Kongo Aceke/Kinoria</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <!--Local water systems in Timau-->
-              <a href="#">Timau <i class="fas fa-caret-right"></i> </a>
-              <div class="subDropdown">
-                <ul>
-                  <li><a href="maranyaMThiira.html">Maranya/Majarene/Thiira</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+  <header>
+    <div class="headerContainer">
+      <div class="navbar">
+        <div class="logo" style="align-items: left;">
+          <img src="images/myLogo.webp" alt="KKWP Logo"/>
         </div>
-      </li>
-      <!-- Other Navigation links-->
-      <li><a href="history.html">History</a></li>
-      <li><a href="contacts.html">Contacts</a></li>
-      <li><a href="apply.html">Apply</a></li>
-      <li><a href="aboutUs.html">AboutUs</a></li>
-    </ul>
-  </div>
+
+        <div class="logoAside">
+          <nav class="mainNav">
+            <button class="hamburger" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <ul class="navMenu">
+              <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+
+              <!--Local Water System dropdrop list-->
+              <li class="dropdownContainer">
+                <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> LWS <i class="fas fa-caret-down" style="color: rgb(108, 236, 108);"></i> </a>
+                <div class="dropdown">
+
+                  <ul>
+                    <li class="subDropdownContainer">
+                      <!--Local water systems in Buuri-->
+                      <a href="#">Buuri <i class="fas fa-caret-right" style="color: rgb(108, 236, 108);"></i> </a>
+                      <div class="subDropdown">
+                        <ul>
+                          <li><a href="kiirua.html">Kiirua</a></li>
+                          <li><a href="marinyaARwibi.html">Marinya Arwibi</a></li>
+                          <li><a href="kinyenjere.html">Kinyenjere</a></li>
+                          <li><a href="ndunyuBarikui.html">Ndunyu Barikui</a></li>
+                          <li><a href="naucii.html">Naucii</a></li>
+                          <li><a href="nkandoCKinoria.html">Nkando Center/Kinoria</a></li>
+                          <li><a href="kithima1Kamuketha.html">Kithima1/Kamuketha</a></li>
+                          <li><a href="kithima2Nruma.html">Kithima2/Ndunyu Ruma</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="subDropdownContainer">
+                      <!--Local water systems in Kibirichia-->
+                      <a href="#">Kibirichia <i class="fas fa-caret-right" style="color: rgb(108, 236, 108);"></i> </a>
+                      <div class="subDropdown">
+                        <ul>
+                          <li><a href="karanene.html">Karanene</a></li>
+                          <li><a href="machakaMurinya.html">Machaka/Murinya</a></li>
+                          <li><a href="mboroga.html">Mboroga</a></li>
+                          <li><a href="kiborione.html">Kiborione</a></li>
+                          <li><a href="kamuketha.html">Kamuketha/Ntumburi</a></li>
+                          <li><a href="majareneMTKamarete.html">Majarene/Marurui/Thiira/Kamarete</a></li>
+                          <li><a href="kongoAcekeKinoria.html">Kongo Aceke/Kinoria</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="subDropdownContainer">
+                      <!--Local water systems in Timau-->
+                      <a href="#">Timau <i class="fas fa-caret-right" style="color: rgb(108, 236, 108);"></i> </a>
+                      <div class="subDropdown">
+                        <ul>
+                          <li><a href="maranyaMThiira.html">Maranya/Majarene/Thiira</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- Other Navigation links-->
+              <li><a href="history.html"><i class="fa fa-history" aria-hidden="true"></i> History</a></li>
+              <li><a href="contacts.html"><i class="fa fa-address-book" aria-hidden="true"></i> Contacts</a></li>
+              <li><a href="apply.html"><i class="fa fa-edit" aria-hidden="true"></i> Apply</a></li>
+              <li><a href="aboutUs.html"><i class="fa fa-info-circle" aria-hidden="true"></i> AboutUs</a></li>
+            </ul>
+          </nav>
+          <div class="gradientDivider"></div>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <script src="dropdown.js"></script>
+
+  <div class="application">
+    <h1 style="font-size: 3.5rem;">Application and Transfer</h1>
+
+              <!--How to apply for a water connection section.-->
+      <div class="gradientDivider"></div>
+        <h1 style="font-size: 3rem; text-decoration: none;">Application</h1>
+      <div class="gradientDivider"></div>
+
+                <!--Membership status and contrubution to extension line.-->
+        <h1>1. Membership Status and Contribution to Extension Line</h1>
+          <p style="text-align: left;">&check; The first condition for getting a water connection from the Kathita Kiirua Water Project is that you must be either a Full Member or a User.:<br>
+            <br>
+            &bullet;  A <span style="color: aquamarine;">Full Member</span> is someone who lives within the project’s official area, which includes the listed local water systems.<br>
+            <br>
+            &bullet;  A <span style="color: aquamarine;">User</span> is someone who lives outside the project’s boundary—that is, someone who is not covered by any of the listed local water systems and closely neighbours the project boundary.<br>
+            <br>
+            If you are not sure whether you qualify as a <span style="color: aquamarine;">Full Member</span> or a <span style="color: aquamarine;">User</span>, please call our office for clarification before making any payments.<br>
+            <br>
+            If you are sure that you are a <span style="color: aquamarine;">Full Member</span>, the following charges apply:
+          </p>
+          
+            <table class="applicationTable">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Cost (Ksh)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Implementation fund</td>
+                  <td>3,000</td>
+                </tr>
+                <tr>
+                  <td>Mainline Days_400*40</td>
+                  <td>16,000</td>
+                </tr>
+                <tr>
+                  <td>Registration</td>
+                  <td>1,000</td>
+                </tr>
+                <tr>
+                  <td>Local Water System_400*13</td>
+                  <td>5,200</td>
+                </tr>
+                <tr>
+                  <td>Total Cost</td>
+                  <td>25,200</td>
+                </tr>
+              </tbody>
+            </table>
+
+          <p>If you are a <span style="color: aquamarine;">User</span>, the following charges apply:</p>
+            <table class="applicationTable">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Cost (Ksh)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Implementation fund</td>
+                  <td>2,500</td>
+                </tr>
+                <tr>
+                  <td>Mainline Days_400*30</td>
+                  <td>12,000</td>
+                </tr>
+                <tr>
+                  <td>Registration</td>
+                  <td>1,000</td>
+                </tr>
+                <tr>
+                  <td>Local Water System_400*13 </td>
+                  <td>5,200</td>
+                </tr>
+                <tr>
+                  <td>Total Cost</td>
+                  <td>20,700</td>
+                </tr>
+              </tbody>
+            </table>
+
+          <p>After paying the full required amount, you will be issued a Membership Card (for Full Members) or a User Card (for Users), which will include your Membership Number. This number is important for identification and future services.<br>
+              <br>
+          </p>
+          <p style="text-align: left;">&check;  The second condition is that the applicant must have participated in the trenching of the extension line and contributed to the purchase of water pipes, especially if the connection involves a new chamber (the concrete box that holds a meter).<br>
+            <br>
+            If the applicant did not participate in the trenching and pipe purchase, they are required to pay the agreed amount set by those who did the trenching and pipe contribution up to the specific chamber that the applicant intends to use for their meter.
+          </p>
+
+                  <!--Application process and pipe installation section.-->
+        <h1>2. Application Process and Pipe Installation</h1>
+        
+          <p style="text-align: left;">&check;  Once the above conditions are met, you should visit our office, located next to St. Theresa Mission Hospital, and pay for a water connection.<br><br></p>
+          <p style="color: aquamarine; font-size: 2.5rem; text-decoration: overline;">Full Members</p>
+            <table class="applicationTable">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Cost (Ksh)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Connection fee</td>
+                  <td>7,000</td>
+                </tr>
+                <tr>
+                  <td>Refundable fee</td>
+                  <td>1,000</td>
+                </tr>
+                <tr>
+                  <td>Total Cost</td>
+                  <td>8,000</td>
+                </tr>
+              </tbody>
+            </table>
+
+          <p style="color: aquamarine; font-size: 2.5rem; text-decoration: overline;">Users</p>
+            <table class="applicationTable">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Cost (Ksh)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Connection fee</td>
+                  <td>9,500</td>
+                </tr>
+                <tr>
+                  <td>Refundable fee</td>
+                  <td>1,000</td>
+                </tr>
+                <tr>
+                  <td>Total Cost</td>
+                  <td>10,500</td>
+                </tr>
+              </tbody>
+            </table>
+
+          <p style="color: aquamarine; font-size: 2.5rem; text-decoration: overline;">Markets</p>
+            <table class="applicationTable">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Cost (Ksh)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Connection fee</td>
+                  <td>11,000</td>
+                </tr>
+                <tr>
+                  <td>Refundable fee</td>
+                  <td>1,000</td>
+                </tr>
+                <tr>
+                  <td>Total Cost</td>
+                  <td>12,000</td>
+                </tr>
+              </tbody>
+            </table>
+
+          <p style="text-align: left;">&check;  You will be given a Water Connection Application Form.<br>
+                  <br>
+            &check;  The form must be filled out and signed by:<br>
+            &bullet; The committee of the sub-unit where your land is located.<br>
+            &bullet; The LWS (Local Water System) Chairperson.<br>
+            <br>
+            &check;  You must attach the following documents to the application form:<br>
+            &bullet;  A copy of your ID<br>
+            &bullet;  A copy of your KRA PIN<br>
+            &bullet;  A passport-sized photo<br>
+            &bullet;  The land number of the property where water will be connected<br>
+            <br>
+            &check;  You are responsible for laying pipes from your home or land to the chosen chamber (where your water meter will be installed).<br>
+            <br>
+            &check;  After these steps are completed, KKWP plumbers will come within 3 working days to install the water meter and necessary fittings.<br>
+            <br>
+            <span style="font-weight: 900; color: aquamarine;"><strong>Important:</strong></span><br>
+            &bullet;  Water meters are only installed inside chambers, not directly on private land or homes.<br>
+            &bullet;  If you want a meter to be placed on your land or home, you must cover all costs involved, including the plumber's labor and any extra materials.<br><br>
+          </p>
+
+            <!--Billing and disconnection policy section.-->
+        <h1>3. Billing and Disconnection Policy</h1>
+          <p style="text-align: left;">&check;  After your water connection is completed:<br>
+              &bullet;  Your water bill will be sent to you via SMS (text message).<br>
+              &bullet;  You must pay the bill within 14 days of receiving the message.<br>
+              <br>
+              &check;  If the bill is not paid within 14 days, your water supply will be disconnected.<br>
+              <br>
+              &check;  To have your water reconnected, you will need to pay a reconnection fee of KES 500.<br>
+              <br>
+              <span style="font-weight: 900; color: aquamarine;">Important Notice:</span><br>
+              &check;  Once your water has been disconnected:<br>
+              &bullet;  You are not allowed to fetch water through pipes from KKWP water points.<br>
+              &bullet;  You are also not allowed to be supplied with water by other members who have private water connections.<br>
+              <br>
+              &check;  Any such actions are considered a violation of the water project rules and may lead to further penalties.<br><br>
+          </p>
+
+              <!--Membership transfer and replacements section.-->
+      <div class="gradientDivider"></div>
+          <h1 style="font-size: 3rem; text-decoration: none;">Membership Transfer and Replacements</h1>
+      <div class="gradientDivider"></div>
+        <p>This section explains how to transfer membership and replace membership cards under different situations.<br></p>
+
+                  <!--Transfer of membership section-->
+          <h1>1. Transfer of Membership</h1>
+            <p style="text-align: left;">A KKWP membership can be transferred to another person under the following conditions:<br>
+              <br>
+              &check;  A family letter confirming the transfer. This letter must include:<br>
+              &bullet;  Full names of family members.<br>
+              &bullet;  Their ID numbers.<br>
+              &bullet;  Mobile phone numbers.<br>
+              &bullet;  Signatures.<br>
+              <br>
+              &check;  A verification letter from five (5) LWS committee representatives confirming that the information in the family letter is true.<br>
+              <br>
+              &check;  The original Membership Card must be returned.<br>
+              &bullet;  If the card is not available, the transferee (the person receiving the membership) must pay KES 500 for a replacement card.<br>
+              <br>
+              &check;  The transferee must also pay a KES 3,000 transfer fee.<br><br>
+            </p>
+
+                      <!--transfer incase of death section-->
+          <h1>2. Transfer in case of death.</h1>
+            <p style="text-align: left;">&check;  If the member has passed away, the spouse (also called the claimant) can take over the membership.<br>
+              <br>
+              &check;  The spouse must present proof that they are the legal partner of the deceased member (e.g., a marriage certificate, death certificate, or letter from family/local authorities).<br>
+              <br>
+              &check;  The original Membership Card should be presented.<br>
+              &bullet;  If the card is not available, the spouse must pay KES 500 for a replacement.<br>
+              <br>
+              &check;  No transfer fee is charged to the spouse.<br><br>
+            </p>
+
+            <!--free replacement in case of fire section-->
+          <h1>3. Free Replacement in Case of Fire</h1>
+            <p style="text-align: left;">&check;  If the member’s house has burned down and the Membership Card was destroyed:<br>
+              &bullet;  The card will be replaced for free.<br>
+              &bullet;  The member must report the incident at the KKWP office and provide proof of the fire (e.g., confirmation from local authorities or community leaders).<br><br>
+            </p>
+
+            <!--Water bill and other payments section.-->
+      <div class="gradientDivider"></div>
+          <h1 style="font-size: 3rem; text-decoration: none;">Water bill and other payments</h1>
+      <div class="gradientDivider"></div>
+        <p>To continue enjoying reliable water supply, all members and users are expected to pay their water bills and other charges on time. Below are the approved methods of payment:<br><br></p>
+          <h1>Payment methods</h1>
+            <p>There are three main ways to make payments:<br><br></p>
+
+            <!--Mpesa section.-->
+              <h1>1.  Mpesa Paybill</h1>
+                <p style="text-align: left;">&check;    Go to your M-PESA menu.<br>
+                  &check;    Select Lipa na M-PESA.<br>
+                  &check;    Choose Paybill.<br>
+                  &check;    Enter the Business Number: 855650<br>
+                  &check;    Enter the Account Number:<br>
+                  &bullet;    For water bill payments: Use your Connection Number.<br>
+                  &bullet;    For any other payments (e.g., transfer fees, card replacements): Use your National ID Number.<br>
+                  &check;    Enter the amount and complete the transaction.<br>
+                </p>
+
+                <!--Cash section.-->
+              <h1>2.  Cash payment at the office</h1>
+                <p>You can pay in cash directly at the KKWP office located next to St. Theresa Mission Hospital.<br><br>
+                  Always make sure you receive an official receipt for your payment.<br><br>
+                </p>
+
+                  <!--Bank transfer section.-->
+              <h1>3.  Bank Transfer to Cooperative Bank</h1>
+                <p>You can also pay through direct deposit or bank transfer to the KKWP account at Cooperative Bank.<br><br></p>
+  </div>
 
 
     <!--the bottom navigation section of the website-->

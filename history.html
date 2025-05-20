@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Water Background</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -20,79 +21,90 @@
   <div class="overlay"></div>
 
   <!-- Content Over Video -->
-   <!--The navigation bar-->
-   <div class="navbar">
-
-    <!--Logo image-->
-    <div class="logo" style="align-items: left;">
-      <img src="images/myLogo.webp" alt="KKWP Logo"/>
-    </div>
-
-    <!--Navigation bar links-->
-    <ul>
-      <li><a href="index.html">Home</a></li>
-
-      <!--Local Water System dropdrop list-->
-      <li>
-        <a href="#">LWS <i class="fas fa-caret-down"></i> </a>
-        <div class="dropdown">
-
-          <ul>
-            <li>
-              <!--Local water systems in Buuri-->
-              <a href="#">Buuri <i class="fas fa-caret-right"></i> </a>
-              <div class="subDropdown">
-                <ul>
-                  <li><a href="kiirua.html">Kiirua</a></li>
-                  <li><a href="marinyaARwibi.html">Marinya A-Rwibi</a></li>
-                  <li><a href="kinyenjere.html">Kinyenjere</a></li>
-                  <li><a href="ndunyuBarikui.html">Ndunyu Barikui</a></li>
-                  <li><a href="naucii.html">Naucii</a></li>
-                  <li><a href="nkandoCKinoria.html">Nkando c/Kinoria</a></li>
-                  <li><a href="kithima1Kamuketha.html">KithimaI/Kamuketha</a></li>
-                  <li><a href="kithima2Nruma.html">KithimaII/N.ruma</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <!--Local water systems in Kibirichia-->
-              <a href="#">Kibirichia <i class="fas fa-caret-right"></i> </a>
-              <div class="subDropdown">
-                <ul>
-                  <li><a href="karanene.html">Karanene</a></li>
-                  <li><a href="machakaMurinya.html">Machaka/Murinya</a></li>
-                  <li><a href="mboroga.html">Mboroga</a></li>
-                  <li><a href="kiborione.html">Kiborione</a></li>
-                  <li><a href="kamuketha.html">Kamuketha/Ntumburi</a></li>
-                  <li><a href="majareneMTKamarete.html">Majarene/Marurui/Thiira/Kamarete</a></li>
-                  <li><a href="kongoAcekeKinoria.html">Kongo Aceke/Kinoria</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <!--Local water systems in Timau-->
-              <a href="#">Timau <i class="fas fa-caret-right"></i> </a>
-              <div class="subDropdown">
-                <ul>
-                  <li><a href="maranyaMThiira.html">Maranya/Majarene/Thiira</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+  <header>
+    <div class="headerContainer">
+      <div class="navbar">
+        <div class="logo" style="align-items: left;">
+          <img src="images/myLogo.webp" alt="KKWP Logo"/>
         </div>
-      </li>
-      <!-- Other Navigation links-->
-      <li><a href="history.html">History</a></li>
-      <li><a href="contacts.html">Contacts</a></li>
-      <li><a href="apply.html">Apply</a></li>
-      <li><a href="aboutUs.html">AboutUs</a></li>
-    </ul>
-  </div>
+
+        <div class="logoAside">
+          <nav class="mainNav">
+            <button class="hamburger" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <ul class="navMenu">
+              <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+
+              <!--Local Water System dropdrop list-->
+              <li class="dropdownContainer">
+                <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> LWS <i class="fas fa-caret-down" style="color: rgb(108, 236, 108);"></i> </a>
+                <div class="dropdown">
+
+                  <ul>
+                    <li class="subDropdownContainer">
+                      <!--Local water systems in Buuri-->
+                      <a href="#">Buuri <i class="fas fa-caret-right" style="color: rgb(108, 236, 108);"></i> </a>
+                      <div class="subDropdown">
+                        <ul>
+                          <li><a href="kiirua.html">Kiirua</a></li>
+                          <li><a href="marinyaARwibi.html">Marinya Arwibi</a></li>
+                          <li><a href="kinyenjere.html">Kinyenjere</a></li>
+                          <li><a href="ndunyuBarikui.html">Ndunyu Barikui</a></li>
+                          <li><a href="naucii.html">Naucii</a></li>
+                          <li><a href="nkandoCKinoria.html">Nkando Center/Kinoria</a></li>
+                          <li><a href="kithima1Kamuketha.html">Kithima1/Kamuketha</a></li>
+                          <li><a href="kithima2Nruma.html">Kithima2/Ndunyu Ruma</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="subDropdownContainer">
+                      <!--Local water systems in Kibirichia-->
+                      <a href="#">Kibirichia <i class="fas fa-caret-right" style="color: rgb(108, 236, 108);"></i> </a>
+                      <div class="subDropdown">
+                        <ul>
+                          <li><a href="karanene.html">Karanene</a></li>
+                          <li><a href="machakaMurinya.html">Machaka/Murinya</a></li>
+                          <li><a href="mboroga.html">Mboroga</a></li>
+                          <li><a href="kiborione.html">Kiborione</a></li>
+                          <li><a href="kamuketha.html">Kamuketha/Ntumburi</a></li>
+                          <li><a href="majareneMTKamarete.html">Majarene/Marurui/Thiira/Kamarete</a></li>
+                          <li><a href="kongoAcekeKinoria.html">Kongo Aceke/Kinoria</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="subDropdownContainer">
+                      <!--Local water systems in Timau-->
+                      <a href="#">Timau <i class="fas fa-caret-right" style="color: rgb(108, 236, 108);"></i> </a>
+                      <div class="subDropdown">
+                        <ul>
+                          <li><a href="maranyaMThiira.html">Maranya/Majarene/Thiira</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- Other Navigation links-->
+              <li><a href="history.html"><i class="fa fa-history" aria-hidden="true"></i> History</a></li>
+              <li><a href="contacts.html"><i class="fa fa-address-book" aria-hidden="true"></i> Contacts</a></li>
+              <li><a href="apply.html"><i class="fa fa-edit" aria-hidden="true"></i> Apply</a></li>
+              <li><a href="aboutUs.html"><i class="fa fa-info-circle" aria-hidden="true"></i> AboutUs</a></li>
+            </ul>
+          </nav>
+          <div class="gradientDivider"></div>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <script src="dropdown.js"></script>
 
   <div>
-    <h1 class="otherTitles" style="color: skyblue;">Know our history</h1>
+    <h1 class="otherTitles" style="color: skyblue; text-decoration: overline;">Know our history</h1>
     <p class="p">The Kathita Kiirua Water Project (KKWP) is legally registered and recognised by the registrar of societies. KKWP has been appointed as a water service provider by Tana Water Services Board and has a 168km2 area of operation. It is affiliated to the Diocese of Meru Water and Sanitation Services (DOMWASS).<br>
         <br>
         The project was initiated by the efforts of the congregation of Little Sisters of St. Therese of the Child Jesus with stewardship from Sr. Maria Pia and Sr Rittalba Sutti. CEFA(an Italian NGO) was approached through the Diocesan structures and Little Sisters of St. Therese of the Child Jesus through the Bishop of Imola to assist primarily as an implementing agency. <br>
