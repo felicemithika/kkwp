@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100vw;
 }
 
 body, html {
@@ -17,8 +18,9 @@ body, html {
   grid-template-columns: auto;
   grid-template-rows: auto;
   min-height: 100vh;
-  gap: 20px;
+  gap: 1.4rem;
   font-family: 'Cormorant Garamond', serif;
+  max-width: 100vw;
 }
 
 /* Background video settings */
@@ -28,20 +30,20 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the entire viewport */
-  z-index: -2; /* Places the video behind the content */
+  object-fit: cover; 
+  z-index: -2;
   overflow-y: auto;
 }
 
-/* Put a dark cover on top of the background video to make the content more readable. */
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
-  z-index: -1; /* Ensures the overlay is behind the content but above the video */
+  background: rgba(0, 0, 0, 0.7); 
+  z-index: -1; 
 }
 
 
@@ -68,11 +70,12 @@ header {
     justify-content: space-between;
   }
 
-    /* customize the logo */
   .logo img {
-    width: 6vw;
-    height: 6vw;
+    width: 13vw;
+    height: 8vw;
     object-fit: contain;
+    padding: 0;
+    margin: 0;
   }
 
   .mainNav {
@@ -118,6 +121,7 @@ header {
     display: block;
     padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 1rem);
     color: white;
+    font-weight: 100;
     text-decoration: none;
     font-style: italic;
   }
@@ -197,7 +201,7 @@ header {
   }
 
   .dropdown ul li a:hover {
-    color: black;
+    color: darkblue;
   }
 
   .fas {
@@ -260,12 +264,27 @@ header {
   }
 
   .subDropdown ul li a:hover {
-    color: black;
+    color: darkblue;
   }
 
   @media (max-width: 768px) {
+    body, html {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      min-height: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      gap: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      max-width: 100vw;
+    }
     .logo img {
-      width: 16vw;
+      width: 26vw;
       height: 16vw;
       object-fit: contain;
     }
@@ -300,6 +319,9 @@ header {
     
     .hamburger {
       display: block;
+      margin-left: auto;
+      order: 2;
+      padding: 10px 25vw;
     }
     
     .hamburger.active span:nth-child(1) {
@@ -407,7 +429,7 @@ header {
   object-fit: fill;
   justify-content: center;
   display: flex;
-  border-top: 10px solid transparent;
+  border-top: 5px solid transparent;
   border-color: transparent;
 }
 
@@ -510,7 +532,7 @@ header {
     pointer-events: auto;
     z-index: 1; 
   }
-  25% {
+  40% {
     opacity: 0;
     pointer-events: none;
     z-index: -1; 
@@ -607,26 +629,34 @@ header {
       z-index: 1;
       color: #ffff;
       display: block;
-      width: 90vw;
-      left: 5%;
+      width: 100%;
       padding: 1%;
       text-decoration: overline;
+      align-items: center;
+      justify-content: center;
     }
 
   /* Control how the long paragraphs in the website will behave */
-.p {
-  font-size: clamp(0.8rem, 2vw, 1.5rem);
-  color: #ffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1); /* Adds text contrast over video */
-  margin-top: 0;
-  line-height: 1.6;
-  z-index: 0;
-  position: relative;
-  display: block;
-  width: 90vw;
-  text-align: center;
-  background-color: transparent;
-}
+  .p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    line-height: 1.6;
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    overflow-wrap: break-word; 
+    word-break: normal; 
+    white-space: normal;
+    background-color: transparent;
+    position: relative;
+    z-index: 0;
+  }
+
 /* Style the titles in the website*/
 .title {
   text-align: left;
@@ -669,16 +699,9 @@ header {
 }
 
 .announcement p {
-  font-size: clamp(0.8rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 4vw, 1.5rem);
   margin: 0;
   line-height: 1.4;
-}
-
-/* General reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 /* Manage how the content of the website looks */
@@ -691,7 +714,7 @@ header {
   color: #ffff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
   padding: 2rem;
-  z-index: 1; /* Ensures content is above the video */
+  z-index: 1;
 }
 
 .otherTitle h2 {
@@ -716,8 +739,8 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: 8; /* Ensures the overlay is behind the content but above the video */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 8;
 }
 
 .aboutUsContainer {
@@ -752,8 +775,6 @@ header {
   color: #ffff;
   text-align: center;
 }
-
-  /* styling for the footer of the website */
   /* Bottom Bar Container */
 .bottomBarContainer {
   position: relative;
@@ -984,10 +1005,10 @@ ul {
 }
 
 .applicationTable {
-  width: 100%;
+  width: 90%;
   border-collapse: separate;
   border-spacing: 0 10px;
-  margin: 20px 0;
+  margin: 20px auto;
   font-size: clamp(0.7rem, 3vw, 1.2rem);
   font-style: oblique;
 }
@@ -1025,19 +1046,96 @@ ul {
 }
 
 .applicationTable tbody tr:hover {
-  transform: translateY(-7px);
+  transform: translateY(-7px) scale(1.05);
 }
 
 .gradientDivider {
   height: 10px;
   background: linear-gradient(to right, #28A745, #007BFF);
-  width: 90vw;
+  width: 85vw;
   border-radius: 5px;
-  align-self: center;
-  align-items: center;
+  margin: 0 auto;
 }
 
 .logoAside {
   display: grid;
   grid-row: auto auto;
+}
+
+.contacts {
+  display: grid;
+  grid-template-rows: auto;
+  max-width: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts p {
+  text-align: center;
+  color: white;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  padding: 10px;
+}
+
+.contacts p span {
+  color: skyblue;
+  display: inline-block; 
+  transition: all 0.3s ease;
+}
+
+.contacts p span:hover {
+  color: aqua;
+  transform: translateY(-5px) scale(1.05);
+  transition: all 1s ease-out;
+  text-shadow: 0 7px 5px rgba(0, 255, 255, 0.4);
+}
+
+.contactsCommittees {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap:1.1rem;
+  max-width: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactsCommittees h1 {
+  color: aquamarine;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  text-decoration: overline;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactsCommittees p {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.contactsCommittees p span {
+  color: skyblue;
+  display: inline-block; 
+  transition: all 0.3s ease;
+}
+
+.contactsCommittees p span:hover {
+  color: aqua;
+  transform: translateY(-5px) scale(1.05);
+  transition: all 0.8s ease-in-out;
+  text-shadow: 0 7px 5px rgba(0, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .contactsCommittees {
+    display: grid;
+    grid-template-columns: auto;
+    gap:1.1rem;
+    max-width: 100%;
+  }
 }
