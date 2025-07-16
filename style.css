@@ -644,9 +644,11 @@ header {
     line-height: 1.6;
     text-align: center;
     display: block;
-    width: 100%;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0 10px;
     box-sizing: border-box;
     overflow-wrap: break-word; 
@@ -689,18 +691,9 @@ header {
   margin-bottom: clamp(0.8rem, 1.5rem, 2rem);
 }
 
-.announcement img {
-  width: 5vw;
-  height: 5vw;
-  object-fit: cover;
-  margin-right: 2vw;
-  border-radius: 0.2vw;
-  border: 0.2vw solid lightgreen;
-}
-
 .announcement p {
   font-size: clamp(1rem, 4vw, 1.5rem);
-  margin: 0;
+  padding: 20px;
   line-height: 1.4;
 }
 
@@ -1002,10 +995,21 @@ ul {
   color: #ffff;
   font-size: clamp(0.8rem, 2vw, 1.5rem);
   text-align: center;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.application p a {
+  text-decoration: none;
+  color: skyblue;
+}
+
+.application p a:hover {
+  color: darkblue;
 }
 
 .applicationTable {
-  width: 90%;
+  width: 75%;
   border-collapse: separate;
   border-spacing: 0 10px;
   margin: 20px auto;
@@ -1055,6 +1059,13 @@ ul {
   width: 85vw;
   border-radius: 5px;
   margin: 0 auto;
+}
+
+.gradientDividerAnnouncement {
+  height: 20vh;
+  background: linear-gradient(to right, #28A745, #007BFF);
+  width: 30px;
+  border-radius: 5px;
 }
 
 .logoAside {
@@ -1131,6 +1142,12 @@ ul {
   text-shadow: 0 7px 5px rgba(0, 255, 255, 0.4);
 }
 
+.lwsListings {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3rem;
+}
+
 @media (max-width: 768px) {
   .contactsCommittees {
     display: grid;
@@ -1138,4 +1155,12 @@ ul {
     gap:1.1rem;
     max-width: 100%;
   }
+
+  .lwsListings {
+    display: grid;
+    grid-template-columns: auto;
+    gap:1.1rem;
+    max-width: 100%;
+  }
 }
+
