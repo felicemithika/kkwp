@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: https://github.com/felicemithika/kkwp.git
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "index"
+    label: "Homepage Announcements"
+    files:
+      - file: "index.html"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - { label: "Announcements", name: "body", widget: "markdown" }
+
+  - name: "apply"
+    label: "Apply Page"
+    files:
+      - file: "apply.html"
+        label: "Apply Page"
+        name: "applypage"
+        fields:
+          - { label: "Apply Page Content", name: "body", widget: "markdown" }
+

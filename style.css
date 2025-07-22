@@ -219,7 +219,7 @@ header {
     display: block;
     position: absolute;
     top: 0;
-    left: 14vw;
+    left: 200px;
     background: linear-gradient(to right, #28A745, #007BFF);
     border-radius: 0.7vw;
     padding: 0;
