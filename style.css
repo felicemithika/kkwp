@@ -659,6 +659,15 @@ header {
     z-index: 0;
   }
 
+  .p a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .p a:hover {
+    color: lightgreen;
+  }
+
 /* Style the titles in the website*/
 .title {
   text-align: left;
